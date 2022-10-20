@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXController">
+   <children>
+      <ComboBox fx:id="selecOpc" layoutX="26.0" layoutY="14.0" onAction="#selecOpcHandler" prefHeight="25.0" prefWidth="100.0" promptText="Opciones" />
+      <HBox alignment="CENTER" layoutX="3.0" layoutY="48.0" prefHeight="58.0" prefWidth="1018.0" spacing="20.0">
+         <children>
+            <TextField fx:id="ingNum" prefHeight="25.0" prefWidth="100.0" promptText="Num Cheque" />
+            <DatePicker fx:id="dEmision" promptText="Fecha de Emision" />
+            <DatePicker fx:id="dPago" promptText="Fecha de Pago" />
+            <TextField fx:id="concept" prefHeight="25.0" prefWidth="200.0" promptText="Concepto" />
+            <TextField fx:id="ingValor" prefHeight="25.0" prefWidth="100.0" promptText="\$" />
+         </children>
+      </HBox>
+      <Label fx:id="lblDbStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="346.0" layoutY="94.0" prefHeight="25.0" prefWidth="326.0" text="Estado" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Label>
+      <Button fx:id="agregarBtn" layoutX="305.0" layoutY="14.0" mnemonicParsing="false" onAction="#agregarCheque" text="Agregar" />
+      <Button fx:id="eliminarBtn" layoutX="654.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteCheque" text="Eliminar" />
+      <Button fx:id="buscarBtn" layoutX="487.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscarCheque" text="Buscar" />
+      <TextField fx:id="ingSaldo" layoutX="1034.0" layoutY="52.0" promptText="Ingrese Saldo Pesos" />
+      <Button fx:id="addSaldoBtn" layoutX="1208.0" layoutY="52.0" mnemonicParsing="false" onAction="#agregarSaldo" text="Agregar Saldo" />
+      <Label fx:id="saldoInicial" layoutX="1034.0" layoutY="94.0" prefHeight="25.0" prefWidth="174.0" text="Saldo Inicial" />
+      <Label fx:id="saldoActual" layoutX="1034.0" layoutY="119.0" prefHeight="25.0" prefWidth="174.0" text="Saldo Actual" />
+      <Label fx:id="saldoUltPago" layoutX="1036.0" layoutY="144.0" prefHeight="25.0" prefWidth="295.0" text="Saldo a Ult.Pago" />
+      <ComboBox fx:id="selecMes" layoutX="26.0" layoutY="172.0" onAction="#mostrarCheqSegunMes" prefWidth="150.0" promptText="Seleccione Mes" />
+      <Button fx:id="mostrarTodo" layoutX="186.0" layoutY="172.0" mnemonicParsing="false" onAction="#mostrarTodo" text="Mostrar Todo" />
+      <TableView fx:id="tableViewCheques" layoutX="26.0" layoutY="196.0" prefHeight="552.0" prefWidth="1064.0">
+        <columns>
+            <TableColumn fx:id="id" editable="false" prefWidth="30.0" text="id" />
+          <TableColumn fx:id="num" prefWidth="133.0" sortable="false" text="N° Cheque" />
+          <TableColumn fx:id="emision" minWidth="0.0" prefWidth="147.0" text="Fecha de Emision" />
+          <TableColumn fx:id="pago" minWidth="0.0" prefWidth="165.0" text="Fecha de Pago" />
+          <TableColumn fx:id="desc" prefWidth="342.0" sortable="false" text="Concepto" />
+          <TableColumn fx:id="valor" minWidth="0.0" prefWidth="171.0" text="Valor " />
+            <TableColumn fx:id="pagado" prefWidth="75.0" text="Pagado?" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableViewSaldos" layoutX="1121.0" layoutY="196.0" prefHeight="552.0" prefWidth="174.0">
+         <columns>
+            <TableColumn fx:id="saldo" minWidth="0.0" prefWidth="183.0" text="Saldo" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
