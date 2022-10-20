@@ -22,7 +22,7 @@ import javafx.scene.control.PasswordField;
 
 public class LoginController implements Initializable {
 
-	private static final String USER = "sonia@manchinellimontajes.com.ar", PASS = "1234";
+	private static final String USER = "s@m", PASS = "1234";
 
 	private DbController dbControl = new DbController();
 	
